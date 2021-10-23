@@ -225,3 +225,8 @@ window.addEventListener("resize", colorChange)
   }
   //처음에 bodyColor.style.backgroundcolor: red; 이렇게 해서 됐었는데
   //body하나 쓰고 지우니까 갑자기 안됨. 찾아보니까 background-color로 하네...
+
+  h1 {
+    color: blue;
+    transition: color 0.5s ease-in-out;
+}//글자가 바뀔 때 부드럽게 바뀌는 효과
