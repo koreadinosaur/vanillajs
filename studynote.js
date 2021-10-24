@@ -230,3 +230,18 @@ window.addEventListener("resize", colorChange)
     color: blue;
     transition: color 0.5s ease-in-out;
 }//글자가 바뀔 때 부드럽게 바뀌는 효과
+
+----------------------------------------------------
+바닐라js 4.1-
+
+const loginInput = document.querySelector(".login-form input")
+const loginButton = document.querySelector(".login-form button")
+function loginButtonEvent(){
+    const username = loginInput.value;
+    if (username === "") {
+        alert("please write username");
+    } else if (username.length > 15) {
+        alert("username is too long");
+    }
+}
+loginButton.addEventListener("click", loginButtonEvent)
