@@ -245,3 +245,31 @@ function loginButtonEvent(){
     }
 }
 loginButton.addEventListener("click", loginButtonEvent)
+
+//html로만 로그인 구축하기.//
+
+<form class="login-form">
+<input
+required
+maxlength = "10"
+type="text" 
+placeholder="what is your name?" 
+/>
+<button>log in</button>
+</form>
+---------------------------------
+4.1~ localStorage에 저장하기 
+
+const loginInput = document.querySelector(".login-form input")
+const loginForm = document.querySelector(".login-form")
+const welcome = document.querySelector("#welcome")
+function loginSubmit(event){
+    event.preventDefault();
+    const username = loginInput.value
+    loginForm.classList.add("hidden")
+    console.log(username)
+    welcome.innerText = username + "! welcome to visit!"
+    welcome.classList.remove("hidden")    
+    localStorage.setItem("username", username)
+}
+loginForm.addEventListener("submit", loginSubmit)
