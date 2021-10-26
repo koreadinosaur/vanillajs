@@ -273,3 +273,72 @@ function loginSubmit(event){
     localStorage.setItem("username", username)
 }
 loginForm.addEventListener("submit", loginSubmit)
+
+------------------------------------------
+4.1~4.7 localStorage에 값이 저장되어 있으면 form 보여주지 말고 h1 보여주기
+const loginInput = document.querySelector(".login-form input");
+const loginForm = document.querySelector(".login-form");
+const welcome = document.querySelector("#welcome");
+const HIDDEN_CLASSNAME = "hidden";
+function loginSubmit(event){
+  event.preventDefault();
+  const username = loginInput.value;
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  localStorage.setItem("username", username);
+  greeting(username);
+}
+function showForm(){
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  loginForm.addEventListener("submit", loginSubmit);
+}
+function greeting(username) {
+  welcome.classList.remove(HIDDEN_CLASSNAME);
+  welcome.innerText = username + "! welcome to visit!";
+}
+
+const savedlocalStorage = localStorage.getItem("username");
+if(savedlocalStorage === null) {
+  showForm();
+} else {
+  greeting(savedlocalStorage);
+}
+------------------------------------------------
+10.26 assignment 랜덤숫자 맞히는 게임
+const generateInput = document.querySelector(".generateNumber input");
+const guessInput = document.querySelector(".guessNumber input");
+const gameForm = document.querySelector("#gameForm");
+const gameInfo = document.querySelector(".gameInfo");
+const won = document.querySelector(".won")
+const lost = document.querySelector(".lost")
+function winOrLose(event){
+    const playersNumber=guessInput.value;
+    event.preventDefault();
+    const randomNumber = Math.round(Math.random()*generateInput.value);
+    console.log(playersNumber);
+    gameInfo.innerText="You chose: " + playersNumber + " the machine chose: " + randomNumber;
+    gameInfo.classList.remove("hidden")
+    console.log(randomNumber);
+    localStorage.setItem("playersNumber", playersNumber);
+    localStorage.setItem("randomNumber", randomNumber);
+const playersNumberStorage = localStorage.getItem("playersNumber");
+const randomNumberStorage = localStorage.getItem("randomNumber");
+if (playersNumberStorage === randomNumberStorage){
+    won.innerText="you won!";
+    won.classList.remove("hidden");
+    lost.classList.add("hidden");
+} else {
+    lost.classList.remove("hidden");
+    won.classList.add("hidden");
+    lost.innerHTML="you lost!";
+}
+}
+
+gameForm.addEventListener("submit", winOrLose);
+
+//엄청 헤맸었는데.. 음.. if문을 function 바깥에 빼서 입력했었는데 그 때는
+새로고침하지 않으면 if가 작동하지 않았음. 그러니까 playersNumberStorage와 randomNumberStorage가
+같아도 you won! 텍스트가 뜨지 않았다. function 내부에 넣으니까 뜸
+근데 또 이게 function 내부에 넣어도 
+storage에 저장한 숫자 말고 playersNumber랑 randomNumber를 비교하니까 또 안되더라
+
+왜그런거임??
