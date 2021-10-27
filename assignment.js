@@ -16,7 +16,7 @@ function winOrLose(event){
     localStorage.setItem("randomNumber", randomNumber);
 const playersNumberStorage = localStorage.getItem("playersNumber");
 const randomNumberStorage = localStorage.getItem("randomNumber");
-if (playersNumberStorage === randomNumberStorage){
+if (parseInt(playersNumber) === parseInt(randomNumber)){
     won.innerText="you won!";
     won.classList.remove("hidden");
     lost.classList.add("hidden");
