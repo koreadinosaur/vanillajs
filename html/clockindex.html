@@ -8,11 +8,13 @@
     <title>Document</title>
 </head>
 <body>
-    <form class="hidden" id="login-form">
-
+    <h1 id="greeting">D-day 계산기</h1>
+    <form id="clock-form">
+        <input type="date">
+        <input type="submit" value="계산">
+        <span>기준일자 : </span><input class="inputDateInfo" type="text" placeholder="예)21-10-01">
     </form>
-    <h1 class="hidden" id="greeting"></h1>
-    <h2 id="clock"></h2>
+    <h2 id="clock" class="hidden"></h2>
     <script src="/vanillajs/js/greeting.js"></script>
     <script src="/vanillajs/js/clock.js"></script>
 </body>
