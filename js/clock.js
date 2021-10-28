@@ -7,7 +7,7 @@ function getClock(event) {
     const today = new Date();//지금 현재 시간을 요일 / 월 / 일 / 연도 / 시 / 분/ 초 순으로 나열해줌
     const Dday = inputDate.valueAsDate; //목표 시간
     const distance = Dday - today; // 위의 두 개를 빼면 밀리 세컨드 단위로 시간의 차이가 나온다.
-    const dd = Math.floor(distance/(1000*60*60*24)); // 시간단위에서 24를 더 나눠주면 일자가 나온다.    
+    const dd = Math.ceil(distance/(1000*60*60*24)); // 시간단위에서 24를 더 나눠주면 일자가 나온다.    
     clock.innerHTML ="기준일로부터 " + dd + "일 남았습니다 ";
     inputDateInfo.innerHTML = "lala" // input창에
     if(inputDate.valueAsDate!==null) {  //!==이라고 해야 작동함. !=하면 안됨
