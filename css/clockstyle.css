@@ -1,3 +1,99 @@
 .hidden {
     display: none;
 }
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: fadeIn 0.5s linear;
+  }
+  #timeNow {
+      text-align: right;
+      color:white;
+      -webkit-text-stroke: 0.5px black;
+  }
+  .login-form{
+    position: absolute; 
+    text-align: center; 
+    margin-left: -150px; 
+    margin-top: -50px; 
+    left: 50%; 
+    top: 50%; 
+    color: wheat;   
+  }
+  #welcome{
+      text-align: center;
+      position: relative; 
+      text-align: center; 
+      margin-top: 300px; 
+      color: wheat;
+      font-family: monospace;
+  }
+  #todo-form{
+      position: absolute; 
+      text-align: center; 
+      margin-left: -150px; 
+      margin-top: px; 
+      left: 50%; 
+      top: 50%;   
+  }
+  input{
+    background-color:transparent;
+    border-right:0px; border-top:0px; boder-left:0px; boder-bottom:1px;
+    border-bottom: tomato;
+    outline:none;
+    color: wheat;
+  }
+  input::placeholder {
+    color: white;
+    font-style: italic;
+  }
+
+  #todo-list{/*리스트 추가될때마다 자동으로 밑에있는 div나 form까지 자동으로 아래로 내려가는 것 구현하기 */
+      position: absolute; 
+      text-align: left; 
+      margin-left: -200px; 
+      margin-top: 30px; 
+      left: 50%; 
+      top: 50%; 
+      color: wheat;
+      font-family: monospace;
+      font-weight:bold;
+      font-size:x-large;
+  }
+  #quote{ /*텍스트 랜덤으로 나오는 것마다 자동으로 정렬되는 것 공부하기*/
+      position: relative; 
+      text-align: center; 
+      margin-left: px; 
+      margin-top: -300px; 
+      left: 35%; 
+      top: 80%;
+      color:white;
+      font-family:serif;
+      font-weight: bold;
+      -webkit-text-stroke: 0.2px black;
+  }
+  #weather{
+      text-align: right;
+      color:white;
+      -webkit-text-stroke: 0.5px black;
+      font-size: x-large;
+  }
+    button {
+	display: inline-block;
+	width: 45px;
+	height: 25px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 0px;
+	outline: none;
+	background-color:salmon;
+	color: #fff;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+}

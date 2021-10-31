@@ -9,8 +9,13 @@ function saveTodo(){
 
 function removeTodo(event){ //✖️버튼 클릭하면 리스트에서 제거하는 함수
     const removeLi = event.target.parentElement;//버튼을 클릭하면 어떤 버튼이 클릭됐는지 인식하도록 만들어줘야한다.
-    console.log(removeLi.id)//#7.6 ✖️누른 버튼의 li id를 알 수 있음
+    //console.log(removeLi.id)//#7.6 ✖️누른 버튼의 li id를 알 수 있음
     removeLi.remove();                   //함수의 인자에 event를 넣어서 console.log하면 path에 경로가 나옴.
+    setTodo = setTodo.filter((todoInputValueObj) => parseInt(removeLi.id) !== todoInputValueObj.id);
+    //todoInputValueObj내의 id는 string이 아니라 number다.
+    //removeLi의 id는 string이다. saveTodo내의 함수인 JSON.strigigy에 의해 string이 되었기 때문.
+    //그래서 여기서 parseInt를 이용해서 removeLi의 id를 number로 바꿔준 것.
+    saveTodo(); //saveTodo까지 해주지 않으면 새로고침하면 지웠던게 다시 그대로 생김.
 }
 
 function addList(todoInputValueObj){ //todoInput.value를 리스트에 추가해주는 함수
@@ -18,7 +23,7 @@ function addList(todoInputValueObj){ //todoInput.value를 리스트에 추가해
     li.id = todoInputValueObj.id;
     const span = document.createElement("span");
     const button = document.createElement("button");
-    button.innerText = "✖️" //#7.2 이모지사용 : 단축키는 window키와 .(마침표키)
+    button.innerText = "완료" //#7.2 이모지사용 : 단축키는 window키와 .(마침표키)
     li.appendChild(span); //Child에 C가 대문자인 것 조심할 것.. li에 span을 추가
     li.appendChild(button);//#7.2 li에 button추가
     span.innerHTML = todoInputValueObj.text; //왜 innerText 하면 안되지?
@@ -50,13 +55,3 @@ if(getTodo !== null){
     parsedTodos.forEach(addList);
     setTodo = parsedTodos;//#7.5 localStorage가 덮어씌워지지않도록 막아줌
 }
-
-function goodFilter(){
-
-}
-[1,2,3,4].filter(goodFilter);
-
-goodFilter(1) = 1
-goodFilter(2) = 2
-goodFilter(3) = 3
-goodFilter(4) = 4

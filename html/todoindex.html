@@ -8,7 +8,11 @@
     <title>To Do List</title>
 </head>
 <body>
-    <h1 id="timeNow"></h1>
+    <div id="weather">
+        <span></span>
+        <span></span>
+    </div>
+    <h3 id="timeNow"></h3>
     <form class="login-form hidden">
         <input
         required
@@ -24,14 +28,14 @@
     </form>
     <ul id="todo-list">
     </ul>
-    <h1 id="greeting">D-day 계산기</h1>
+    <!-- <h1 id="greeting">D-day 계산기</h1> -->
     <form id="clock-form">
-        <input type="date">
+        <!-- <input type="date">
         <input type="submit" value="계산">
-        <span>기준일자 : </span><input class="inputDateInfo" type="text" placeholder="예)21-10-01">
+        <span>기준일자 : </span><input class="inputDateInfo" type="text" placeholder="예)21-10-01"> -->
     </form>
     <h2 id="clock" class="hidden"></h2>
-    <div id=quote>
+    <div id="quote">
         <span></span><br>
         <span></span>
     </div>
@@ -40,5 +44,6 @@
     <script src="/vanillajs/js/background.js"></script>
     <script src="/vanillajs/js/quotes.js"></script>
     <script src="/vanillajs/js/todo.js"></script>
+    <script src="/vanillajs/js/weather.js"></script>
 </body>
 </html>
