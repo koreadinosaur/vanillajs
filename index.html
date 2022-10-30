@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/todolist/css/todosyle.css">
+    <title>To Do List</title>
+</head>
+<body>
+    <div id="weather">
+        <span></span>
+        <span></span>
+    </div>
+    <h3 id="timeNow"></h3>
+    <form class="login-form hidden">
+        <input
+        required
+        maxlength = "10"
+        type="text" 
+        placeholder="what is your name?" 
+        />
+        <button>log in</button>
+        </form>
+        <h1 id="welcome" class="hidden"></h1>
+    <form id="todo-form"> <!--form 안에 있어야 submit이 됨.-->
+        <input required type="text" placeholder="Write ToDoList">
+    </form>
+    <ul id="todo-list">
+    </ul>
+    <!-- <h1 id="greeting">D-day 계산기</h1> -->
+    <form id="clock-form">
+        <!-- <input type="date">
+        <input type="submit" value="계산">
+        <span>기준일자 : </span><input class="inputDateInfo" type="text" placeholder="예)21-10-01"> -->
+    </form>
+    <h2 id="clock" class="hidden"></h2>
+    <div id="quote">
+        <span></span><br>
+        <span></span>
+    </div>
+    <script src="/js/greeting.js"></script>
+    <script src="/js/clock.js"></script>
+    <script src="/js/background.js"></script>
+    <script src="/js/quotes.js"></script>
+    <script src="/js/todo.js"></script>
+    <script src="/js/weather.js"></script>
+</body>
+</html>
